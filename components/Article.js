@@ -124,6 +124,10 @@ function articleMaker(artObj){
   const secondParagraph = document.createElement('p');
   const thirdParagraph = document.createElement('p');
   const expandButton = document.createElement('span')
+  
+  article.classList.add('article');
+  date.classList.add("date");
+  expandButton.classList.add("expandButton")
 
   article.appendChild(articleTitle);
   article.appendChild(date);
@@ -132,24 +136,23 @@ function articleMaker(artObj){
   article.appendChild(thirdParagraph);
   article.appendChild(expandButton);
 
-  article.classList.add("article");
-  date.classList.add("date");
-  expandButton.classList.add("expandButton")
   
-  articleTitle.textcontent =artObj.title;
+  
+  articleTitle.textContent = artObj.title;
   date.textContent= artObj.date;
   firstParagraph.textContent = artObj.firstParagraph;
   secondParagraph.textContent = artObj.secondParagraph;
   thirdParagraph.textContent=artObj.thirdParagraph;
   expandButton.textContent = "↓"
 
-  const toggleButton= function(event){
-    expandButton.classList.toggle("article-open")
+  // const toggleButton= function(event){
+  //   expandButton.classList.toggle("article-open")
    
     
-  }
+  // }
   
-  expandButton.addEventListener('click', toggleButton);
+ // expandButton.addEventListener('click', toggleButton);
+ expandButton.addEventListener("click",function(){article.classList.toggle("article-open")})
     
 return article;
 
